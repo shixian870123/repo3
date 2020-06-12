@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.icis</groupId>
+    <artifactId>SpringBoot_Quick</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--引入父工程 (理解为java中类的继承)-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+    <!--导入SpringBoot的依赖包 和昨天导包过程一样  如果有父工程  子工程依赖的jar包的版本号可以指定(用自己的)
+     也可以不指定: 继承它父工程的对应的jar包的版本号, 在使用SpringBoot开发中推荐使用父工程的
+     因为如果你自己指定  可以回出现不兼容的事情  jar包冲突
+     导入 web开发相关的依赖
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+      <!--
+      SpringBoot程序给我们提供热部署:
+        把我们写的代码不需要重启服务器就可以运行我们修改后的代码
+        三步走:
+        1.导包
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        2.改变我们idea的编译器  在项目重新加载的时候重新编译
+        3.改变 Resigtry
+        关于热部署:
+        1.如果电脑硬件比较不错   推荐使用热部署  如果硬件一般  不建议
+          因为热部署会根据你的代码只要更新不管多少  就自动重启服务
+      -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+    </dependencies>
+</project>
